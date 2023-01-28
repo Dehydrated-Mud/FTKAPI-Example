@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2aXStJRE3JK2uUo/FYgg262duQigdcNP0djt/EkOOCgZjZpHzYa893erHE++hgWgWPOc4k1ZieNOGKrCXeNOEw==",
+  "dgSpecHash": "0mBwvU+sa23eTrzq3+HHi4LcxGcbnB2maE1qwWt0/3BEyZ4I1+Rsvyz6BaeSLUOCTw+7BioSKfRjeyoKcu4odg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\blloy\\OneDrive\\Documents\\FTKMods\\Example\\FTKModLib-main\\FTKModLib.Example\\FTKModLib.Example.csproj",
+  "projectFilePath": "C:\\Users\\blloy\\OneDrive\\Documents\\GitHub\\FTKAPI-Example\\FTKModLib.Example.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\blloy\\.nuget\\packages\\bepinex.analyzers\\1.0.8\\bepinex.analyzers.1.0.8.nupkg.sha512",
     "C:\\Users\\blloy\\.nuget\\packages\\bepinex.baselib\\5.4.20\\bepinex.baselib.5.4.20.nupkg.sha512",
