@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="ExampleObjects\ExampleAvatar.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="customitemsbundle" />
   </ItemGroup>
 
@@ -34,13 +30,9 @@
   <ItemGroup>
 	<EmbeddedResource Include="customskinsbundle" />
   </ItemGroup>
-	
-  <ItemGroup>
-    <None Include="ExampleObjects\ExampleAvatar.cs" />
-  </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Core" Version="5.*" />
     <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
@@ -52,18 +44,18 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\..\..\FTKAPI\FTKAPI.csproj" />
+    <ProjectReference Include="..\FTKAPI\FTKAPI.csproj" />
   </ItemGroup>
   
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\blloyd-test\templates\FTK.test\stripped-binaries-master\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\FTKAPI\Libs\stripped-binaries\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\..\Games\SteamLibrary\steamapps\common\For The King\FTK_Data\Managed\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\..\blloyd-test\templates\FTK.test\stripped-binaries-master\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\FTKAPI\Libs\stripped-binaries\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
 

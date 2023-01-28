@@ -9,7 +9,7 @@ using UnityEngine;
 using Logger = FTKAPI.Utils.Logger;
 
 namespace FTKModLib.Example {
-    [BepInPlugin("AmadareExample", "AmadareExample", "0.1.0")]
+    [BepInPlugin("FTKAPIExample", "FTKAPIExample", "0.1.0")]
     [BepInDependency("FTKAPI")]
     //[BepInProcess("FTK.exe")]
     public class ExampleMod : BaseUnityPlugin {
