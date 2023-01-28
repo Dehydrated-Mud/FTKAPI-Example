@@ -1,0 +1,449 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FTKAPI</name>
+    </assembly>
+    <members>
+        <member name="T:FTKAPI.Compatibility.CompatibilityLevel">
+            <summary>
+            Enum used for telling whether or not the mod should be needed by everyone in multiplayer games.
+            Also can specify if the mod does not work in multiplayer.
+            </summary>
+        </member>
+        <member name="T:FTKAPI.Compatibility.VersionStrictness">
+            <summary>
+            Enum used for telling whether or not the same mod version should be used by both the server and the clients.
+            This enum is only useful if CompatibilityLevel.EveryoneMustHaveMod was chosen.
+            </summary>
+        </member>
+        <member name="T:FTKAPI.Compatibility.NetworkCompatibility">
+            <summary>
+            Attribute to have at the top of your BaseUnityPlugin class if
+            you want to specify if the mod should be installed by everyone in multiplayer games or not.
+            If the mod is required to be installed by everyone, you'll need to also specify if the same mod version should be used by everyone or not.
+            By default, it's supposed that everyone needs the mod and the same version.
+            e.g: [NetworkCompatibility(CompatibilityLevel.NoNeedForSync)]
+            </summary>
+        </member>
+        <member name="P:FTKAPI.Compatibility.NetworkCompatibility.CompatibilityLevel">
+            <summary>
+            Used for telling whether or not the mod should be needed by everyone in multiplayer games.
+            </summary>
+        </member>
+        <member name="P:FTKAPI.Compatibility.NetworkCompatibility.VersionStrictness">
+            <summary>
+            Enum used for telling whether or not the same mod version should be used by both the server and the clients.
+            This enum is only useful if CompatibilityLevel.EveryoneMustHaveMod was chosen.
+            </summary>
+        </member>
+        <member name="T:FTKAPI.Managers.AssetManager">
+            <summary>
+               Manager for handling assets (models/animations) added to the game.
+            </summary>
+        </member>
+        <member name="F:FTKAPI.Managers.AssetManager.AssetBundlePathSeparator">
+            <summary>
+                Path separator for AssetBundles
+            </summary>
+        </member>
+        <member name="M:FTKAPI.Managers.AssetManager.LoadTexture(System.String,System.Boolean)">
+            <summary>
+                Loads a <see cref="T:UnityEngine.Texture2D"/> from file at runtime.
+            </summary>
+            <param name="texturePath">Texture path relative to "plugins" BepInEx folder</param>
+            <param name="relativePath">Is the given path relative</param>
+            <returns>Texture2D loaded, or null if invalid path</returns>
+        </member>
+        <member name="M:FTKAPI.Managers.AssetManager.LoadSpriteFromFile(System.String)">
+            <summary>
+                Loads a <see cref="T:UnityEngine.Sprite"/> from file at runtime.
+            </summary>
+            <param name="spritePath">Texture path relative to "plugins" BepInEx folder</param>
+            <returns>Texture2D loaded, or null if invalid path</returns>
+        </member>
+        <member name="M:FTKAPI.Managers.AssetManager.LoadMesh(System.String)">
+            <summary>
+                Loads a mesh from a .obj file at runtime.
+            </summary>
+            <param name="meshPath">Mesh path relative to "plugins" BepInEx folder</param>
+            <returns>Texture2D loaded, or null if invalid path</returns>
+        </member>
+        <member name="M:FTKAPI.Managers.AssetManager.LoadAssetBundle(System.String)">
+            <summary>
+                Loads an asset bundle at runtime.
+            </summary>
+            <param name="bundlePath">Asset bundle path relative to "plugins" BepInEx folder</param>
+            <returns>AssetBundle loaded, or null if invalid path</returns>
+        </member>
+        <member name="M:FTKAPI.Managers.AssetManager.LoadAssetBundleFromResources(System.String,System.Reflection.Assembly)">
+            <summary>
+                Load an assembly-embedded <see cref="T:UnityEngine.AssetBundle" />
+            </summary>
+            <param name="bundleName">Name of the bundle. Folders are point-seperated e.g. folder/bundle becomes folder.bundle</param>
+            <param name="resourceAssembly">Executing assembly</param>
+            <returns></returns>
+        </member>
+        <member name="M:FTKAPI.Managers.AssetManager.LoadTextFromResources(System.String,System.Reflection.Assembly)">
+            <summary>
+                Load an assembly-embedded file as a char string />
+            </summary>
+            <param name="fileName">Name of the file. Folders are point-seperated e.g. folder/file.json becomes folder.file.json</param>
+            <param name="resourceAssembly">Executing assembly</param>
+            <returns></returns>
+        </member>
+        <member name="M:FTKAPI.Managers.AssetManager.LoadText(System.String)">
+            <summary>
+                Loads the contents of a file as a char string
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FTKAPI.Managers.AssetManager.LoadSprite(System.String)">
+            <summary>
+                Loads a <see cref="T:UnityEngine.Sprite"/> from a file path or an asset bundle (separated by <see cref="F:FTKAPI.Managers.AssetManager.AssetBundlePathSeparator"/>)
+            </summary>
+            <param name="assetPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FTKAPI.Managers.BaseManager`1.Init">
+            <summary>
+                Initialize manager class
+            </summary>
+        </member>
+        <member name="T:FTKAPI.Managers.ClassManager">
+            <summary>
+               Manager for handling player classes in the game.
+            </summary>
+        </member>
+        <member name="M:FTKAPI.Managers.ClassManager.GetClass(GridEditor.FTK_playerGameStart.ID)">
+            <summary>
+            Gets a class from TableManager's FTK_playerGameStartDB
+            <para>Must be called in a TableManager.Initialize postfix patch.</para>
+            </summary>
+            <param name="id">The class's id.</param>
+            <returns>Returns FTK_playerGameStart</returns>
+        </member>
+        <member name="M:FTKAPI.Managers.ClassManager.AddClass(FTKAPI.Objects.CustomClass,BepInEx.BaseUnityPlugin)">
+            <summary>
+            Add a custom class.
+            <para>Must be called in a TableManager.Initialize postfix patch.</para>
+            </summary>
+            <param name="customClass">The custom class to be added.</param>
+            <param name="plugin">Allows FTKModLib to know which plugin called this method. Not required but recommended to make debugging easier.</param>
+            <returns>Returns FTK_playerGameStart.ID enum as int</returns>
+        </member>
+        <member name="M:FTKAPI.Managers.ClassManager.ModifyClass(GridEditor.FTK_playerGameStart.ID,FTKAPI.Objects.CustomClass)">
+            <summary>
+            Modifies a class from TableManager's FTK_playerGameStartDB
+            <para>Must be called in a TableManager.Initialize postfix patch.</para>
+            </summary>
+            <param name="id">The class's id.</param>
+            <param name="customClass">The new class to override over.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FTKAPI.Managers.ClassManager.HarmonyPatches">
+            <summary>
+               <para>The patches necessary to make adding custom items possible.</para>
+               <para>Many of them are used to fix issues calling an invalid 'FTK_playerGameStart.ID' 
+               by substituting with 'ClassManager.enums' dictionary value.</para>
+            </summary>
+        </member>
+        <member name="T:FTKAPI.Managers.ItemManager">
+            <summary>
+               Manager for handling items in the game.
+            </summary>
+        </member>
+        <member name="M:FTKAPI.Managers.ItemManager.GetItem(GridEditor.FTK_itembase.ID)">
+            <summary>
+            Gets a class from TableManager's FTK_itemsDB
+            <para>Must be called in a TableManager.Initialize postfix patch.</para>
+            </summary>
+            <param name="id">The item's id.</param>
+            <returns>Returns the item as a CustomItem</returns>
+        </member>
+        <member name="M:FTKAPI.Managers.ItemManager.AddItem(FTKAPI.Objects.CustomItem,BepInEx.BaseUnityPlugin)">
+            <summary>
+            Add a custom item.
+            <para>Must be called in a TableManager.Initialize postfix patch.</para>
+            </summary>
+            <param name="customItem">The custom item to be added.</param>
+            <param name="plugin">Allows FTKModLib to know which plugin called this method. Not required but recommended to make debugging easier.</param>
+            <returns>Returns FTK_itembase.ID enum as int</returns>
+        </member>
+        <member name="M:FTKAPI.Managers.ItemManager.ModifyItem(GridEditor.FTK_itembase.ID,FTKAPI.Objects.CustomItem)">
+            <summary>
+            Modifies an item from TableManager's FTK_itemsDB (and FTK_weaponStats2DB if weapon)
+            <para>Must be called in a TableManager.Initialize postfix patch.</para>
+            </summary>
+            <param name="id">The item's id.</param>
+            <param name="customItem">The new item to override over.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FTKAPI.Managers.ItemManager.HarmonyPatches">
+            <summary>
+               <para>The patches necessary to make adding custom items possible.</para>
+               <para>Many of them are used to fix issues calling an invalid 'FTK_itembase.ID' 
+               by substituting with 'ItemManager.enums' dictionary value.</para>
+            </summary>
+        </member>
+        <member name="T:FTKAPI.Managers.ItemManager.HarmonyDebugPatches">
+            <summary>
+            Debug patches that may assist in debugging FTKModLib
+            </summary>
+        </member>
+        <member name="P:FTKAPI.Managers.Networking.INetworkObjectCreator.Id">
+            <summary>
+            Linked id for object created by this creator.
+            </summary>
+        </member>
+        <member name="P:FTKAPI.Managers.Networking.INetworkObjectCreator.SpawnOnRoomCreation">
+            <summary>
+            When true, instantiation will be triggered on room creation.
+            </summary>
+        </member>
+        <member name="M:FTKAPI.Managers.Networking.INetworkObjectCreator.InstantiateFromNetwork(System.Int32[])">
+            <summary>
+            Creates object when triggered from network.
+            </summary>
+            <param name="viewIds">Ids for all PhotonView components in spawned object</param>
+        </member>
+        <member name="M:FTKAPI.Managers.Networking.INetworkObjectCreator.InstantiateNew(System.Int32[]@)">
+            <summary>
+            Creates object when triggered with <see cref="M:FTKAPI.Managers.NetworkManager.SpawnNetworkObject(System.String)"/> locally.
+            </summary>
+            <param name="viewIds">Ids for all PhotonView components in spawned object</param>
+        </member>
+        <member name="P:FTKAPI.Managers.Networking.NetworkObjectOptions.SpawnOnRoomCreation">
+            <summary>
+            If true, automatically spawns GameObject on room creation. Room owner will be object owner.
+            </summary>
+        </member>
+        <member name="P:FTKAPI.Managers.Networking.NetworkObjectOptions.AutoAllocateIds">
+            <summary>
+            If true, automatically allocate IDs for all PhotonView instances of instantiated object.
+            </summary>
+        </member>
+        <member name="P:FTKAPI.Managers.Networking.NetworkObjectOptions.CreateRootPhotonView">
+            <summary>
+            If true, for root GameObject, PhotonView component will be added automatically.
+            </summary>
+        </member>
+        <member name="M:FTKAPI.Managers.NetworkManager.SetNetworkCompatibility(BepInEx.PluginInfo,FTKAPI.Compatibility.NetworkCompatibility)">
+            <summary>
+            Sets Network Compatibility info for plugins that have FTKAPI as a soft-dependency.
+            </summary>
+        </member>
+        <member name="M:FTKAPI.Managers.NetworkManager.RegisterNetObject(System.String,System.Action{UnityEngine.GameObject},FTKAPI.Managers.Networking.NetworkObjectOptions)">
+            <summary>
+            Registers custom GameObject factory that can spawn it on both client and server side with sync capabilities.
+            NOTE: Try to avoid creating a lot of net objects, since you'll have to share with game and other plugins only 1000 "object slots" per player.  
+            </summary>
+        </member>
+        <member name="M:FTKAPI.Managers.NetworkManager.RegisterNetObject(FTKAPI.Managers.Networking.INetworkObjectCreator)">
+            <summary>
+            Registers custom GameObject factory that can spawn it on both client and server side with sync capabilities.
+            Use this overload to fully control GameObject creation process. 
+            NOTE: Try to avoid creating a lot of net objects, since you'll have to share with game and other plugins only 1000 "object slots" per player.  
+            </summary>
+        </member>
+        <member name="M:FTKAPI.Managers.NetworkManager.SpawnNetworkObject(System.String)">
+            <summary>
+            Spawns net object by key for all clients that have this key registered with RegisterNetObject call.  
+            </summary>
+        </member>
+        <member name="M:FTKAPI.Managers.ProficiencyManager.GetProficiency(GridEditor.FTK_proficiencyTable.ID)">
+            <summary>
+            Gets a class from TableManager's FTK_proficiencyTable
+            <para>Must be called in a TableManager.Initialize postfix patch.</para>
+            </summary>
+            <param name="id">The class's id.</param>
+            <returns>Returns FTK_proficiencyTable</returns>
+        </member>
+        <member name="M:FTKAPI.Managers.ProficiencyManager.AddProficiency(FTKAPI.Objects.CustomProficiency,BepInEx.BaseUnityPlugin)">
+            <summary>
+            Add a custom proficiency.
+            <para>Must be called in a TableManager.Initialize postfix patch.</para>
+            </summary>
+            <param name="customProf">The custom proficiency to be added.</param>
+            <param name="plugin">Allows FTKModLib to know which plugin called this method. Not required but recommended to make debugging easier.</param>
+            <returns>Returns FTK_proficiencyTable.ID enum as int</returns>
+        </member>
+        <member name="M:FTKAPI.Managers.ProficiencyManager.ModifyProficiency(GridEditor.FTK_proficiencyTable.ID,FTKAPI.Objects.CustomProficiency)">
+            <summary>
+            Modifies a class from TableManager's FTK_proficiencyTableDB
+            <para>Must be called in a TableManager.Initialize postfix patch.</para>
+            </summary>
+            <param name="id">The proficiency's id.</param>
+            <param name="customProf">The new class to override over.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FTKAPI.Managers.ProficiencyManager.HarmonyPatches">
+            <summary>
+               <para>The patches necessary to make adding custom items possible.</para>
+               <para>Many of them are used to fix issues calling an invalid 'FTK_proficiencyTable.ID' 
+               by substituting with 'ProficiencyManager.enums' dictionary value.</para>
+            </summary>
+        </member>
+        <member name="T:FTKAPI.Managers.SkinsetManager.HarmonyPatches">
+            <summary>
+               <para>The patches necessary to make adding custom items possible.</para>
+               <para>Many of them are used to fix issues calling an invalid 'FTK_playerGameStart.ID' 
+               by substituting with 'ClassManager.enums' dictionary value.</para>
+            </summary>
+        </member>
+        <member name="P:FTKAPI.Objects.CustomClass.ID">
+            <summary>
+            This is the lookup string for the class, recommended to make this as unique as possible
+            </summary>
+        </member>
+        <member name="P:FTKAPI.Objects.CustomClass.Luck">
+            <summary>
+            <para>Luck cannot be lower than 0f</para>
+            <para>Note: Luck is actually a hidden stat until your character spawns (i.e, it won't show up in character info)</para>
+            </summary>
+        </member>
+        <member name="T:FTKAPI.Objects.CustomItem">
+             <summary>
+             <para>Items and Weapons are two seperate things in this game,
+             but this class will combine them into one class for simplicity</para>
+            
+             <para>FTKItem          = functionality of item</para>
+             <para>FTK_weaponStats2 = details of weapon</para>
+             <para>FTK_items        = details of item</para>
+             
+             <para>Weapons attacks/skills are referred to as an 'Proficiency' object,
+             this class will simplify them into a WeaponSkill object.</para>
+             </summary>
+        </member>
+        <member name="P:FTKAPI.Objects.CustomItem.ID">
+            <summary>
+            This is the lookup string for the item, recommended to make this as unique as possible
+            </summary>
+        </member>
+        <member name="P:FTKAPI.Objects.CustomItem.Name">
+            <summary>
+            This is the item's ingame display name, supports localized language
+            </summary>
+        </member>
+        <member name="P:FTKAPI.Objects.CustomItem.Description">
+            <summary>
+            <para>This is the item's ingame description, supports localized language</para>
+            <para>Custom Weapons do not use this field</para>
+            </summary>
+        </member>
+        <member name="P:FTKAPI.Objects.CustomItem.Prefab">
+            <summary>
+            <para>Prefab of the item.</para>
+            <para>If item is a weapon and the prefab is null, it will default to an unarmed prefab.</para>
+            <para>Else, it will use a default cube or nothing at all.</para>
+            </summary>
+        </member>
+        <member name="P:FTKAPI.Objects.CustomItem.Slots">
+            <summary>
+            <para>This is the default number of rolls for attacks</para>
+            <para>This cannot be less than one.</para>
+            </summary>
+        </member>
+        <member name="P:FTKAPI.Objects.CustomItem.NoRegularAttack">
+            <summary>
+            <para>The weapon's default attack/skill, does raw damage, no effects.</para>
+            </summary>
+        </member>
+        <member name="F:FTKAPI.Objects.CustomItem.ProficiencyEffects">
+            <summary>
+            <para>The weapon's attacks/skills, using the vanilla proficiencies</para>
+            </summary>
+        </member>
+        <member name="M:FTKAPI.Objects.CustomLocalizedString.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            This class provides multi-language support for a string
+            </summary>
+            <param name="__en"></param>
+            <param name="__fr"></param>
+            <param name="__it"></param>
+            <param name="__de"></param>
+            <param name="__es"></param>
+            <param name="__pt_br"></param>
+            <param name="__ru"></param>
+            <param name="__zh_cn"></param>
+            <param name="__zh_tw"></param>
+            <param name="__pl"></param>
+            <param name="__ja"></param>
+            <param name="__ko"></param>
+        </member>
+        <member name="P:FTKAPI.Objects.CustomProficiency.ID">
+            <summary>
+            This is the lookup string for the proficiency, recommended to make this as unique as possible
+            </summary>
+        </member>
+        <member name="T:FTKAPI.Utils.Lazy`1">
+            <summary>
+            Provides support for lazy initialization.
+            </summary>
+            <typeparam name="T">Specifies the type of object that is being lazily initialized.</typeparam>
+        </member>
+        <member name="T:FTKAPI.Utils.Logger">
+            <summary>
+                A namespace wide Logger class, which automatically creates a ManualLogSource
+                for every Class from which it is being called.
+            </summary>
+        </member>
+        <member name="F:FTKAPI.Utils.Logger.ShowDate">
+            <summary>
+                Add DateTime to the log output
+            </summary>
+        </member>
+        <member name="M:FTKAPI.Utils.Logger.Init">
+            <summary>
+                Singleton init
+            </summary>
+        </member>
+        <member name="M:FTKAPI.Utils.Logger.Destroy">
+            <summary>
+                Remove and clear all Logger instances
+            </summary>
+        </member>
+        <member name="M:FTKAPI.Utils.Logger.GetLogger">
+            <summary>
+                Get or create a <see cref="T:BepInEx.Logging.ManualLogSource"/> with the callers <see cref="P:System.Type.FullName"/>
+            </summary>
+            <returns>A BepInEx <see cref="T:BepInEx.Logging.ManualLogSource"/></returns>
+        </member>
+        <member name="M:FTKAPI.Utils.Logger.LogFatal(System.Object)">
+            <summary>
+                Logs a message with <see cref="F:BepInEx.Logging.LogLevel.Fatal"/> level.
+            </summary>
+            <param name="data">Data to log</param>
+        </member>
+        <member name="M:FTKAPI.Utils.Logger.LogError(System.Object)">
+            <summary>
+                Logs a message with <see cref="F:BepInEx.Logging.LogLevel.Fatal"/> level.
+            </summary>
+            <param name="data">Data to log</param>
+        </member>
+        <member name="M:FTKAPI.Utils.Logger.LogWarning(System.Object)">
+            <summary>
+                Logs a message with <see cref="F:BepInEx.Logging.LogLevel.Warning"/> level.
+            </summary>
+            <param name="data">Data to log</param>
+        </member>
+        <member name="M:FTKAPI.Utils.Logger.LogMessage(System.Object)">
+            <summary>
+                Logs a message with <see cref="F:BepInEx.Logging.LogLevel.Message"/> level.
+            </summary>
+            <param name="data">Data to log</param>
+        </member>
+        <member name="M:FTKAPI.Utils.Logger.LogInfo(System.Object)">
+            <summary>
+                Logs a message with <see cref="F:BepInEx.Logging.LogLevel.Info"/> level.
+            </summary>
+            <param name="data">Data to log</param>
+        </member>
+        <member name="M:FTKAPI.Utils.Logger.LogDebug(System.Object)">
+            <summary>
+                Logs a message with <see cref="F:BepInEx.Logging.LogLevel.Debug"/> level.
+            </summary>
+            <param name="data">Data to log</param>
+        </member>
+    </members>
+</doc>

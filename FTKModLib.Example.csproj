@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net35</TargetFramework>
+    <AssemblyName>FTKModLib.Example</AssemblyName>
+    <Description>Example mod using FTKModLib</Description>
+    <Version>1.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>9.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CustomAssetTemplates\**" />
+    <EmbeddedResource Remove="CustomAssetTemplates\**" />
+    <None Remove="CustomAssetTemplates\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ExampleObjects\ExampleAvatar.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="customitemsbundle" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="customitemsbundle" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<None Remove="customskinsbundle" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<EmbeddedResource Include="customskinsbundle" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <None Include="ExampleObjects\ExampleAvatar.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Core" Version="5.*" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="UnityEngine.Modules" Version="2017.2.2" IncludeAssets="compile" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FTKAPI\FTKAPI.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\blloyd-test\templates\FTK.test\stripped-binaries-master\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\Games\SteamLibrary\steamapps\common\For The King\FTK_Data\Managed\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\blloyd-test\templates\FTK.test\stripped-binaries-master\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

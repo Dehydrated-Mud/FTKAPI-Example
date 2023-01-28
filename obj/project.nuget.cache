@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "2aXStJRE3JK2uUo/FYgg262duQigdcNP0djt/EkOOCgZjZpHzYa893erHE++hgWgWPOc4k1ZieNOGKrCXeNOEw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\blloy\\OneDrive\\Documents\\FTKMods\\Example\\FTKModLib-main\\FTKModLib.Example\\FTKModLib.Example.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\blloy\\.nuget\\packages\\bepinex.analyzers\\1.0.8\\bepinex.analyzers.1.0.8.nupkg.sha512",
+    "C:\\Users\\blloy\\.nuget\\packages\\bepinex.baselib\\5.4.20\\bepinex.baselib.5.4.20.nupkg.sha512",
+    "C:\\Users\\blloy\\.nuget\\packages\\bepinex.core\\5.4.21\\bepinex.core.5.4.21.nupkg.sha512",
+    "C:\\Users\\blloy\\.nuget\\packages\\bepinex.plugininfoprops\\1.1.0\\bepinex.plugininfoprops.1.1.0.nupkg.sha512",
+    "C:\\Users\\blloy\\.nuget\\packages\\harmonyx\\2.7.0\\harmonyx.2.7.0.nupkg.sha512",
+    "C:\\Users\\blloy\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.2\\microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "C:\\Users\\blloy\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net35\\1.0.2\\microsoft.netframework.referenceassemblies.net35.1.0.2.nupkg.sha512",
+    "C:\\Users\\blloy\\.nuget\\packages\\mono.cecil\\0.10.4\\mono.cecil.0.10.4.nupkg.sha512",
+    "C:\\Users\\blloy\\.nuget\\packages\\monomod.runtimedetour\\21.12.13.1\\monomod.runtimedetour.21.12.13.1.nupkg.sha512",
+    "C:\\Users\\blloy\\.nuget\\packages\\monomod.utils\\21.12.13.1\\monomod.utils.21.12.13.1.nupkg.sha512",
+    "C:\\Users\\blloy\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\blloy\\.nuget\\packages\\unityengine.modules\\2017.2.2\\unityengine.modules.2017.2.2.nupkg.sha512"
+  ],
+  "logs": []
+}
