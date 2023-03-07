@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1188771375
+CRC: 3500476569
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f3ac11ad1d8da9e477da18a42eeaebb2
+    Hash: 42f1601e0fdb2e892061c88b4ab06f29
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 1ad18e87924763a9cae7773e2f9416ca
+    Hash: 04ec6d13fa093c65de1bd077ceabd1cc
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -15,16 +15,30 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
 - Class: 28
+  Script: {instanceID: 0}
+- Class: 33
   Script: {instanceID: 0}
 - Class: 43
   Script: {instanceID: 0}
 - Class: 48
+  Script: {instanceID: 0}
+- Class: 90
   Script: {instanceID: 0}
 - Class: 95
   Script: {instanceID: 0}
 - Class: 137
   Script: {instanceID: 0}
 Assets:
+- Assets/bootsLeprechaun.prefab
+- Assets/helmLeprechaun.prefab
+- Assets/bootsPaladin1.prefab
+- Assets/armorPaladin1.prefab
+- Assets/armorLeprechaun.prefab
+- Assets/armorPaladin.prefab
 - Assets/player_Test.prefab
+- Assets/bootsPaladin.prefab
+- Assets/backpackLeprechaun.prefab
 Dependencies: []

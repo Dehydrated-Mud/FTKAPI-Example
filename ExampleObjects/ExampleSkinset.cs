@@ -18,11 +18,10 @@ namespace FTKModLib.Example
             // Avatar = MakeAvatar(FTK_skinset.ID.blacksmith_Male); // This will set the male blacksmith as the avatar for this skinset (the avatar will be shared between the two classes)
             
             Avatar = MakeAvatar(ExampleMod.assetBundleSkins.LoadAsset<GameObject>("Assets/player_Test.prefab"));
-            Armor = MakeArmor(FTK_skinset.ID.monk_Male);
-            Boot = MakeBoots(FTK_skinset.ID.hunter_Male);
-            Helmet = MakeHelmet(FTK_skinset.ID.scholar_Female);
-            Backpack = MakeBackpack(FTK_skinset.ID.woodcutter_Male);
+            Armor = MakeArmor(ExampleMod.assetBundleSkins.LoadAsset<GameObject>("Assets/armorPaladin1.prefab"));
+            Boot = MakeBoots(ExampleMod.assetBundleSkins.LoadAsset<GameObject>("Assets/bootsPaladin1.prefab"));
+            Helmet = MakeHelmet(ExampleMod.assetBundleSkins.LoadAsset<GameObject>("Assets/helmLeprechaun.prefab"));
+            Backpack = MakeBackpack(ExampleMod.assetBundleSkins.LoadAsset<GameObject>("Assets/backpackLeprechaun.prefab"));
         }
-
     }
 }
