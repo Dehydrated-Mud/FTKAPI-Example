@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3500476569
+CRC: 478258412
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 42f1601e0fdb2e892061c88b4ab06f29
+    Hash: 4c252cce042cb266ce51b3436fd0dafe
   TypeTreeHash:
     serializedVersion: 2
     Hash: 04ec6d13fa093c65de1bd077ceabd1cc
@@ -34,11 +34,11 @@ ClassTypes:
 Assets:
 - Assets/bootsLeprechaun.prefab
 - Assets/helmLeprechaun.prefab
-- Assets/bootsPaladin1.prefab
-- Assets/armorPaladin1.prefab
+- Assets/playerPaladin.prefab
 - Assets/armorLeprechaun.prefab
+- Assets/armorPaladin1.prefab
+- Assets/bootsPaladin.prefab
 - Assets/armorPaladin.prefab
 - Assets/player_Test.prefab
-- Assets/bootsPaladin.prefab
 - Assets/backpackLeprechaun.prefab
 Dependencies: []
